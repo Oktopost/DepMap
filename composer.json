@@ -9,6 +9,14 @@
             "email": "alexey@oktopost.com"
         }
     ],
+    
     "minimum-stability": "stable",
-    "require": {}
+    
+    "require": {},
+    
+    "autoload": {
+        "psr-0": {
+            "DepMap": "src"
+        }
+    }
 }
