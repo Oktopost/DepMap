@@ -4,6 +4,9 @@
 /.settings
 /.idea
 
+# Test classes
+./test.php
+
 # OS Folders
 .DS_Store
 
