@@ -19,7 +19,7 @@ class FilterFileReader
 	 */
 	private function readLine($line)
 	{
-		$isExclude = ($line[0] == '!');
+		$isExclude = ($line[0] != '!');
 		
 		if (!$isExclude && !$this->filterMap)
 		{
@@ -30,7 +30,7 @@ class FilterFileReader
 			$this->filterMap = new FilterMap($this->rootDir);
 		}
 		
-		if ($isExclude)
+		if (!$isExclude)
 		{
 			$line = substr($line, 1);
 		}
