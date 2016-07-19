@@ -56,7 +56,10 @@ class Deployment
 				throw new DepMepException("Failed to create directory $dir");
 			}
 			
-			copy($source, $target);
+			if (!copy($source, $target))
+			{
+				throw new DepMepException("Failed to copy $source to $target");
+			}
 		}
 	}
 	
