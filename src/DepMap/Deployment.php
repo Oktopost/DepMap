@@ -6,7 +6,7 @@ class Deployment
 {
 	private $rootDir	= false;
 	private $targetDir 	= false;
-	private $deployMap	= 'deploy.map';
+	private $deployMap	= 'deploy.ignore.map';
 	
 	
 	/**
