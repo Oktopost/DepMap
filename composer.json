@@ -1,0 +1,14 @@
+{
+    "name": "oktopost/dep-map",
+    "description": "Mapping of files that should be cloned to the production servers",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Puchkov",
+            "email": "alexey@oktopost.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
