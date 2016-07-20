@@ -15,7 +15,7 @@ class FilterFileReaderTest extends \PHPUnit_Framework_TestCase
 	
 	
 	/**
-	 * @expectedException \DepMap\DepMepException
+	 * @expectedException \DepMap\DepMapException
 	 */
 	public function test_constructor_InvalidFile_ThrowException()
 	{

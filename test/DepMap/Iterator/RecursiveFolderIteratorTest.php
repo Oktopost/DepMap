@@ -118,4 +118,9 @@ class RecursiveFolderIteratorTest extends \PHPUnit_Framework_TestCase
 	{
 		$this->assertContainItems(['a/a'], 'HigherMap');
 	}
+	
+	public function test_find_HiddenFileFound()
+	{
+		$this->assertContainItems(['.hidden'], 'HiddenFile');
+	}
 }

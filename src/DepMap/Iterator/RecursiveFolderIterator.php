@@ -25,7 +25,7 @@ class RecursiveFolderIterator
 		
 		$loaded = 0;
 		
-		foreach (glob("$dir/{$this->filterMapFormat}") as $file)
+		foreach (glob("$dir/{$this->filterMapFormat}", GLOB_ERR) as $file)
 		{
 			$mapLoader = new FilterFileReader($file);
 			$map = $mapLoader->read();
@@ -46,6 +46,8 @@ class RecursiveFolderIterator
 	 */
 	private function isIncluded($file)
 	{
+		if (in_array(basename($file), ['.', '..'])) return false;
+		
 		foreach ($this->filters as $filter)
 		{
 			if (!$filter->isIncluded($file)) 
@@ -63,7 +65,7 @@ class RecursiveFolderIterator
 	 */
 	private function filterDirectory($dir)
 	{
-		foreach (glob("$dir/*") as $item)
+		foreach (glob("$dir/{,.}*", GLOB_BRACE | GLOB_ERR) as $item)
 		{
 			if (!$this->isIncluded($item)) continue;
 			

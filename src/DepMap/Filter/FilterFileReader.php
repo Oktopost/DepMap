@@ -2,7 +2,7 @@
 namespace DepMap\Filter;
 
 
-use DepMap\DepMepException;
+use DepMap\DepMapException;
 
 
 class FilterFileReader
@@ -62,7 +62,7 @@ class FilterFileReader
 	{
 		if (!is_readable($filePath))
 		{
-			throw new DepMepException('Could not open file ' . $this->filePath);
+			throw new DepMapException('Could not open file ' . $this->filePath);
 		}
 		
 		$fileInfo = pathinfo($filePath);
@@ -80,7 +80,7 @@ class FilterFileReader
 		$h = fopen($this->filePath, 'r');
 		
 		if (!$h)
-			throw new DepMepException('Could not open file ' . $this->filePath);
+			throw new DepMapException('Could not open file ' . $this->filePath);
 		
 		try
 		{

@@ -13,24 +13,24 @@ class Deployment
 	
 	
 	/**
-	 * @throws DepMepException
+	 * @throws DepMapException
 	 */
 	private function validate()
 	{
 		if (!$this->rootDir)
-			throw new DepMepException('Root directory is not set');
+			throw new DepMapException('Root directory is not set');
 		
 		if (!$this->targetDir)
-			throw new DepMepException('Target directory is not set');
+			throw new DepMapException('Target directory is not set');
 		
 		if (!is_dir($this->rootDir))
-			throw new DepMepException('Root directory is not readable');
+			throw new DepMapException('Root directory is not readable');
 		
 		if (!is_dir($this->targetDir))
-			throw new DepMepException('Target directory is not readable');
+			throw new DepMapException('Target directory is not readable');
 		
 		if (glob($this->targetDir . '/*'))
-			throw new DepMepException("Target directory {$this->targetDir} must be empty");
+			throw new DepMapException("Target directory {$this->targetDir} must be empty");
 	}
 	
 	/**
@@ -53,12 +53,12 @@ class Deployment
 			
 			if (!is_dir($dir) && !mkdir($dir, 0777, true))
 			{
-				throw new DepMepException("Failed to create directory $dir");
+				throw new DepMapException("Failed to create directory $dir");
 			}
 			
 			if (!copy($source, $target))
 			{
-				throw new DepMepException("Failed to copy $source to $target");
+				throw new DepMapException("Failed to copy $source to $target");
 			}
 		}
 	}
