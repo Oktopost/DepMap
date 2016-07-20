@@ -46,7 +46,7 @@ class RecursiveFolderIterator
 	 */
 	private function isIncluded($file)
 	{
-		if (in_array(basename($file), ['.', '..'])) return false;
+		if (in_array(basename($file), ['.', '..', '.git'])) return false;
 		
 		foreach ($this->filters as $filter)
 		{
